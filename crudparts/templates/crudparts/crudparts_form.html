@@ -5,9 +5,11 @@
 {% endblock page_title %}
 
 {% block content %}
-
-  <h1>Cadastrar novas Peças</h1>
-
+  {% if crudparts.pk %}
+    <h1> Editar Peça</h1>
+  {% else %}
+    <h1>Cadastrar novas Peças</h1>
+  {% endif %}
   <h1>VOLTAR NESSA AULA PARA ESTILIZR OS FORMS, UTILIZAR O CRISPY</h1>
   <a href="https://www.youtube.com/watch?v=-DW6rQ5z38A&list=PLZ5WLsqE1WPGPA0Z0H1XB8P6UwgTHOSaf&index=5">Link aula</a>
 

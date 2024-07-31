@@ -17,19 +17,19 @@
             </thead>
             <tbody>
               {% for itens in crudparts_list %}
-              <tr>
-                <th scope="row">{{itens.pk}}</th>
-                <td>{{itens.description}}</td>
-                <td>{{itens.equipamento}}</td>
-                <td>
-                  <a href="#" class="btn btn-outline-primary btn-sm">Concluir</a>
-                  <a href="#" class="btn btn-outline-danger btn-sm">Excluir</a>
-                </td>
-              </tr>
+                <tr>
+                  <th scope="row">{{itens.pk}}</th>
+                  <td>{{itens.description}}</td>
+                  <td>{{itens.equipamento}}</td>
+                  <td>
+                    <a href="{% url 'crudparts_update' pk=itens.pk %}" class="btn btn-outline-primary btn-sm">Concluir</a>
+                    <a href="{% url 'crudparts_delete' pk=itens.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+                  </td>
+                </tr>
               {% endfor %}
             </tbody>
           </table>
-          <a href= {% url "crudparts_form" %} class="btn btn-outline-danger btn-sm">Novo</a>
+          <a href="{% url "crudparts_form" %}" class="btn btn-outline-danger btn-sm">Novo</a>
       {% else %}
       <p>Não há peças cadrastradas</p>
       {% endif %}
